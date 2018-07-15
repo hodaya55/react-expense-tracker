@@ -3,3 +3,15 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.hide{
+  display: none;
+}
+
+.list{
+  display: inline-flex;
+}
+
+.expense{
+  margin-left: 15px;
+}

@@ -4,7 +4,7 @@ import SingleInput from './single-input';
 class ExpenseForm extends Component {
   constructor(props){
     super(props);
-    this.state = { amt: 0, cat: '', descr: '' };
+    this.state = { amt: '', cat: '', descr: '' };
     this.changeExpense = this.changeExpense.bind(this);
     this.onBtnClick = this.onBtnClick.bind(this);
     console.log(this.state);
@@ -17,22 +17,27 @@ changeExpense(e){
 //[e.target.id] <-- is the way to define a dynamic var name
 }
 
-onBtnClick(){
+onBtnClick(e){
   console.table(this.state);
   //to pass the changes to the parent component (App)
-  this.props.addExpense(this.state);
-  // reset the inputs after adding..
-  this.setState({ amt: 0, cat: '', descr: '' });
+  if (e.target.id === "add") {
+      this.props.addExpense(this.state);
+  }
+  else { // id= "edit"
+      this.props.editExpense(this.props.index, this.state);
+  }
+   //reset the inputs
+  this.setState({ amt: '', cat: '', descr: ''});
 }
 
     render() {
         return (
             <div>
                <form>
-               <SingleInput title="Amount" content={this.state.amt} controlFunc={this.changeExpense} id="amt" type="number" placeholder="Amount $"/>
-               <SingleInput title="Category" content={this.state.cat} controlFunc={this.changeExpense} id="cat" type="text" placeholder="Category"/>
-               <SingleInput title="Description" content={this.state.descr} controlFunc={this.changeExpense} id="descr" type="text" placeholder="Description"/>
-              <button onClick={this.onBtnClick} type="button">Add Expense</button>
+               <SingleInput content={this.state.amt} controlFunc={this.changeExpense} id="amt" type="number" placeholder="$ amount?"/>
+               <SingleInput content={this.state.cat} controlFunc={this.changeExpense} id="cat" type="text" placeholder="category?"/>
+               <SingleInput content={this.state.descr} controlFunc={this.changeExpense} id="descr" type="text" placeholder="add description.."/>
+              <button onClick={this.onBtnClick} type="button" id={this.props.id} >{this.props.buttonText}</button>
                </form>
             </div>
         );

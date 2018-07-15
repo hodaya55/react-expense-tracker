@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  background: #a52a2ab3;
 }
 
 .hide{
@@ -13,5 +14,17 @@ body {
 }
 
 .expense{
-  margin-left: 15px;
+  box-shadow: 0 0 7px whitesmoke;
+  border-radius: 5px;
+  padding: 6px;
+  margin-right: 19px;
+}
+
+form{
+  padding: 5px;
+}
+
+.singleInput{
+  padding: 4px;
+  margin: 4px;
 }

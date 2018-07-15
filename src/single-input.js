@@ -6,7 +6,7 @@ class SingleInput extends Component {
       return (
           <div>
                <label>{this.props.title} </label>
-               <input type={this.props.inputType }
+               <input className="singleInput" type={this.props.inputType }
                placeholder={this.props.placeholder}
                onChange={this.props.controlFunc }
                value={this.props.content}

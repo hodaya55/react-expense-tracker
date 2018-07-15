@@ -10,21 +10,48 @@ body {
 }
 
 .list{
-  display: inline-flex;
+  margin-left: 150px;
+  margin-right: 150px;
 }
 
 .expense{
-  box-shadow: 0 0 7px whitesmoke;
+  box-shadow: 3px 4px 7px 4px #510606bd;
+  background-color: #ffe2e2bf;
   border-radius: 5px;
-  padding: 6px;
-  margin-right: 19px;
+  padding-right: 18px;
+  padding-left: 18px;
+  margin: 11px;
+  display: inline-block;
 }
 
 form{
-  padding: 5px;
+  padding: 7px;
 }
 
 .singleInput{
   padding: 4px;
   margin: 4px;
+}
+
+.icons{
+display: flex;
+justify-content: space-around;
+font-size: 22px;
+}
+
+button{
+  border-radius: 5px;
+    background: #6a1a1a;
+    color: white;
+    font-size: large;
+}
+
+button:hover{
+  color: #6a1a1a;
+  background: white;
+  font-weight: bold;
+}
+
+label{
+  font-weight: bold;
 }

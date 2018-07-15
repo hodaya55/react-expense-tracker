@@ -17,18 +17,19 @@ class Expense extends Component {
     render() {
         return (
             <div className="expense">
-                {/* <p className="icons">
+
+                 <p> <label>Amount:</label> ${this.props.amt}</p>
+                 <p> <label>Category:</label> {this.props.cat}</p>
+                 <p><label>Description:</label>{this.props.descr}</p>
+             {/* <button onClick={this.props.handleDelete}>Delete</button>
+             <button onClick={this.toggleEdit}>Edit</button> */}
+             <p className="icons">
                    <i className="fa fa-trash-o" onClick={this.props.handleDelete}></i>
                    <i className="fa fa-pencil-square-o" onClick={this.toggleEdit}></i>
-                </p> */}
-                 <p>Amount: ${this.props.amt}</p>
-                 <p>Category: {this.props.cat}</p>
-                 <p>Description: {this.props.descr}</p>
-             <button onClick={this.props.handleDelete}>Delete</button>
-             <button onClick={this.toggleEdit}>Edit</button>
+                </p>
 
              <div className={!this.state.toggle ? 'hide': null} >
-               <ExpenseForm buttonText="save edit" id="edit" index={this.props.index}
+               <ExpenseForm buttonText="Save Edit" id="edit" index={this.props.index}
                editExpense={this.props.editExpense} />
              </div>
             </div>

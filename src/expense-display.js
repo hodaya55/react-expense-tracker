@@ -13,9 +13,9 @@ class ExpenseDisplay extends Component {
 
     render() {
         return (
-             <ul className="list">
+             <div className="list">
                 {this.renderExpenses()}
-            </ul>
+            </div>
         );
     }
 }
